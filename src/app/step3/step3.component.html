@@ -16,21 +16,32 @@
     <td style="font-weight:bold;">{{color.description}}</td>
     <td>{{color.price|currency:'USD':'symbol'}}</td>
 </tr>
-<tr>
+<tr *ngIf="configList.towHitch">
     <td style="font-weight:bold;">Tow Hitch Package </td>
-    <td *ngIf="configList?.towHitch; else temp"> {{price.toFixed(2) |currency:'USD':'symbol'}}</td>
+    <td > {{priceTowHitch.toFixed(2) |currency:'USD':'symbol'}}</td>
+    <!--<td *ngIf="configList?.towHitch; else temp"> {{priceTowHitch.toFixed(2) |currency:'USD':'symbol'}}</td>
     <ng-template #temp>
 <td>{{0|currency:'USD':'symbol'}}</td>
-    </ng-template>
+    </ng-template>-->
 </tr>
+<tr *ngIf="configList.yoke">
+    <td style="font-weight:bold;">Yoke Steering wheel Package </td>
+    <td> {{priceYoke.toFixed(2) |currency:'USD':'symbol'}}</td>
+    <!--<td *ngIf="configList?.yoke; else temp1"> {{priceYoke.toFixed(2) |currency:'USD':'symbol'}}</td>
+    <ng-template #temp1>
+<td>{{0|currency:'USD':'symbol'}}</td>
+    </ng-template>-->
+</tr>
+
     </table>
     <table style="width:80%">
         <tr>
             <td style="font-weight:bold; width:75%" >TOTAL COST </td>
-            <td *ngIf="configList?.towHitch; else noprice"> {{calcTotal(price,config.price,color.price).toFixed(2)|currency:'USD':'symbol'}}</td>
+            <td>{{calcTotal(priceTowHitch,priceYoke,config.price,color.price).toFixed(2)|currency:'USD':'symbol'}}</td>
+            <!--<td *ngIf="configList?.towHitch; else noprice"> {{calcTotal(priceTowHitch,priceYoke,config.price,color.price).toFixed(2)|currency:'USD':'symbol'}}</td>
        <ng-template #noprice>
-<td> {{calcTotal(0.00,config.price,color.price).toFixed(2)|currency:'USD':'symbol'}}</td>
-       </ng-template>
+<td> {{calcTotal(priceTowHitch,priceYoke,config.price,color.price).toFixed(2)|currency:'USD':'symbol'}}</td>
+       </ng-template>-->
         </tr>
         <tr>
             <td colspan="4">

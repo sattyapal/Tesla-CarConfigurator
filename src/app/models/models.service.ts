@@ -20,7 +20,7 @@ export class ModelsService {
   color:Model={code:'',description:'',price:0};
 modelList:ModelList={colors:[],code:'',description:''};
 config:Config={id:0,description:'',price:0,range:0,speed:0};
-image?:HTMLImageElement//new Blob();
+image?:HTMLImageElement;
 imageUrl:BehaviorSubject<HTMLImageElement |undefined>=new BehaviorSubject(this.image);
 colorValue:BehaviorSubject<Model>=new BehaviorSubject(this.color);
 modelListValue:BehaviorSubject<ModelList>=new BehaviorSubject(this.modelList);
@@ -50,11 +50,7 @@ loadImageHttp(modelCode:string ,colorCode:string):HTMLImageElement{
 const url='https://interstate21.com/tesla-app/images/'+modelCode+'/'+colorCode+'.jpg';
     const image=new Image();
     image.src=url;
-    return image;
-     //this.headers.set('Access-Control-Allow-Origin',"*");
-  //return this.http.get('https://interstate21.com/tesla-app/images/'+modelCode+'/'+colorCode+'.jpg',{headers:this.headers,responseType:"blob"});
-   // return this.http.get('/assets/images/'+modelCode+'/'+colorCode+'.jpg',{responseType:"blob"});
-      
+    return image; 
 }
 getCodeByDescription(modelDesc:String,colorDesc:string){
 this.getModels$.pipe(map(res=>res.filter(items=>items.description===modelDesc && 

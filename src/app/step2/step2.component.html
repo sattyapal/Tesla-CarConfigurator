@@ -24,13 +24,13 @@
         <label *ngIf="configSelect">-Cost:&nbsp;{{configSelect.price.toFixed(2)|currency:'USD':'symbol'}}</label>
 
     </div>
-    <div>
-        <label>Tow Hitch?&nbsp;</label>
-        <input type="checkbox" name="includeTow"  id="includeTow" [(ngModel)]="configList.towHitch">
+    <div *ngIf="configList.towHitch">
+        <label>Tow Hitch?&nbsp;</label> 
+        <input type="checkbox" name="includeTow"  id="includeTow" [(ngModel)]="includeTow" (click)="onTowHitchChange(includeTow);">
     </div>
-    <div>
-        <label>Yoke steering wheel?&nbsp;</label>
-        <input type="checkbox" name="includeYoke"  id="includeYoke"  [checked]="configList.yoke">
+    <div *ngIf="configList.yoke">
+        <label>Yoke Steering wheel?&nbsp;</label>
+        <input type="checkbox" name="includeYoke"   id="includeYoke"  [(ngModel)]="includeYoke" (click)="onYokeChange(includeYoke);">
     </div>
 </td>
 </tr>

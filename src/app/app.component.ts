@@ -24,6 +24,8 @@ export class AppComponent {
 modelCode:string='';
 configList:ConfigList={configs:[],towHitch:false,yoke:false};
 image?:HTMLImageElement//SafeUrl={};
+includeTow:boolean=false;
+includeYoke:boolean=false;
 buttonClicked:string='';
 color:Model={code:'',description:'',price:0};
 modelList:ModelList={colors:[],code:'',description:''};
@@ -82,7 +84,6 @@ onStep3BtnClick(){
     }
     
   });
-
   this.modelService.modelListValue.subscribe((data)=>{
     this.modelList=data;
   });
