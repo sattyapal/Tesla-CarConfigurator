@@ -37,7 +37,8 @@
     <table style="width:80%">
         <tr>
             <td style="font-weight:bold; width:75%" >TOTAL COST </td>
-            <td>{{calcTotal(priceTowHitch,priceYoke,config.price,color.price).toFixed(2)|currency:'USD':'symbol'}}</td>
+           <!--<td>{{calcTotal(priceTowHitch,priceYoke,config.price,color.price).toFixed(2)|currency:'USD':'symbol'}}</td>-->
+            <td>{{getTotalCost().toFixed(2)|currency:'USD':'symbol'}}</td>
             <!--<td *ngIf="configList?.towHitch; else noprice"> {{calcTotal(priceTowHitch,priceYoke,config.price,color.price).toFixed(2)|currency:'USD':'symbol'}}</td>
        <ng-template #noprice>
 <td> {{calcTotal(priceTowHitch,priceYoke,config.price,color.price).toFixed(2)|currency:'USD':'symbol'}}</td>

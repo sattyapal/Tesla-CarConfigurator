@@ -23,9 +23,8 @@ includeYoke:boolean=false;
 @Output() informStep3=new EventEmitter();
 @Input() imageUrl?:HTMLImageElement;
 
-
 constructor ( private route:Router,private modelService:ModelsService){}
-ngOnInit(){
+ngOnInit(): void {
   //this.includeTow=this.configList.towHitch;
   //this.includeYoke=this.configList.yoke;
 }
@@ -33,12 +32,10 @@ onSelect(config:Config){
   this.modelService.configValue.next(this.configSelect);
   this.informStep3.emit(true);
 }
-onTowHitchChange(includeTow:boolean){
-  //this.modelService.configList.towHitch=this.includeTow;
-  this.includeTow=includeTow;
+onTowHitchChange(includeTow: boolean) {
+  this.modelService.includeTow = includeTow;
 }
-onYokeChange(includeYoke:boolean){
-  //this.configList.yoke=this.includeYoke; 
-  this.includeYoke=includeYoke;
+onYokeChange(includeYoke: boolean) {
+  this.modelService.includeYoke = includeYoke;
 }
 }

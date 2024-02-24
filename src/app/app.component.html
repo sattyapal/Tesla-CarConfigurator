@@ -183,7 +183,7 @@
   <button style="width: 30%;" class="btn-group" id="step3" [disabled]="isStep3ButtonDisable" [routerLink]="['step3']" (click)="onStep3BtnClick()">Step 3</button>
   <app-step1 [showStep1Component]="dispalyStep1Component"   (informStep2)="isStep2Enabled()" (isStep2ButtonDisable)="setStep2ButtonEnabled($event)"></app-step1>
   <app-step2 [showStep2Component]="dispalyStep2Component"  *ngIf="!isStep2ButtonDisable" (informStep3)="isStep3Enabled()"
-   [configList]="configList" [imageUrl]="image"></app-step2>
+   [configList]="configList" [imageUrl]="image" ></app-step2>
   <app-step3 [showStep3Component]="dispalyStep3Component" *ngIf="!isStep3ButtonDisable" [configList]="configList"
    [modelList]="modelList" [color]="color" [config]="config" [imageUrl]="image"></app-step3>
 </div>

@@ -27,6 +27,8 @@ modelListValue:BehaviorSubject<ModelList>=new BehaviorSubject(this.modelList);
 configValue:BehaviorSubject<Config>=new BehaviorSubject(this.config);
 configListValue:BehaviorSubject<ConfigList>=new BehaviorSubject(this.configList);
 worker=worker;
+includeTow: boolean = false;
+includeYoke:boolean=false;
 id?:number;
   constructor(private http:HttpClient,private configService:ConfigService) { }
 

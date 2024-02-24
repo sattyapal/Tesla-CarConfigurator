@@ -24,8 +24,8 @@ export class AppComponent {
 modelCode:string='';
 configList:ConfigList={configs:[],towHitch:false,yoke:false};
 image?:HTMLImageElement//SafeUrl={};
-includeTow:boolean=false;
-includeYoke:boolean=false;
+//includeTow:boolean=false;
+//includeYoke:boolean=false;
 buttonClicked:string='';
 color:Model={code:'',description:'',price:0};
 modelList:ModelList={colors:[],code:'',description:''};
@@ -97,9 +97,9 @@ onStep3BtnClick(){
   });
   this.modelService.imageUrl.subscribe((data)=>{
     this.image=data;
-    //this.sanitizer.bypassSecurityTrustUrl(URL.createObjectURL(data));
   });
 }
-  }
+
+}
 
  
